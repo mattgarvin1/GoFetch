@@ -1,5 +1,9 @@
 FROM golang:1.15-alpine as build
 
+# Commands to build and run the points server as a Docker container
+### MacBook-Air:GoFetch matthewgarvin$ docker build -t points .
+### MacBook-Air:GoFetch matthewgarvin$ docker run -d -p 8080:8080 points
+
 # Install SSL certificates
 RUN apk update && apk add --no-cache git ca-certificates gcc musl-dev
 
