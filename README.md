@@ -43,7 +43,7 @@ At the root directory of this repo, do the following:
 3. Ping the points server:
 ```curl http://localhost:8080/points/_status```
 
-### (chk) Example Flow Walkthrough
+### Example Flow Walkthrough
 
 Here is a walkthrough of me testing the server locally, setup exactly as detailed in the above section.
 
