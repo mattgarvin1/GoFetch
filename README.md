@@ -15,7 +15,7 @@ and the server behaves as desired and gives the desired responses.
 
 If I were to spend some more time on this application, I would 
 - create more unit tests
-- hook up Travis to run the tests against commits and PRs
+- hook up [Travis](https://travis-ci.com/) to run the tests against commits and PRs
 - tighten up HTTP response codes / error handling
 - add other useful routes to the API - for example, a route to
 fetch the balances corresponding to a list of payers so that
