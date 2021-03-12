@@ -22,15 +22,15 @@ fetch the balances corresponding to a list of payers so that
 you don't have to receive all payer balances if you're 
 only interested in querying a subset of payers
 
-## (chk) Running The Server
+## Running The Server
 
 The points server can be run locally in a [Docker](https://www.docker.com/) container.
 
-### (chk) Prereq's
+### Prereq's
 
 This server is written in [Go](https://golang.org/) and uses [mux](https://github.com/gorilla/mux).
 
-### (chk) Run with Docker
+### How To Run With Docker
 
 At the root directory of this repo, do the following:
 
@@ -43,7 +43,7 @@ At the root directory of this repo, do the following:
 3. Ping the points server:
 ```curl http://localhost:8080/points/_status```
 
-### (rf) Example Flow
+### (rf) Example Flow Walkthrough
 
 comment
 ```
