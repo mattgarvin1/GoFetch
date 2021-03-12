@@ -1,15 +1,26 @@
-# (todo) Fetch Points Server
+# Fetch Points Server
 
-What is this and what does it do?
+## (chk) Note To Reviewer
 
-## (todo) Note To Interviewer
+[Here](./problemStatement.pdf) is the original problem statement.
 
-- copy of the problem statement
-- Please see my raw scratch note for thoughts I had along the way of solving the problem
-- Basic explanation of my solution
-- How complete is it
-- If I wanted to spend more time on it, I would implement X Y Z
-- thank you for taking the time to review my work!
+If you would like to see a bit of my thought process as I was working, 
+I jotted down some [notes](./thoughtProcess.txt) while working on my solution.
+
+This application functions at a basic level in that
+you can walk through the example flow provided in the problem statement
+and the server behaves as desired and gives the desired responses.
+
+If I were to spend some more time on this application, I would 
+- create more unit tests
+- hook up Travis to run the tests against commits and PRs
+- tighten up HTTP response codes / error handling
+- add other useful routes to the API - for example, a route to
+fetch the balances corresponding to a list of payers so that
+you don't have to receive all payer balances if you're 
+only interested in querying a subset of payers
+
+Thanks for taking the time to review my work!
 
 ## (todo) Running the Server
 
@@ -23,25 +34,18 @@ We run the application as a Docker container.
 - Docker
 - .. anything else?
 
-### (rf) Run with Docker
+### (chk) Run with Docker
 
-comment
-```
-MacBook-Air:GoFetch matthewgarvin$ docker build -t points .
-```
+At the root directory of this repo, do the following:
 
-comment
-```
-MacBook-Air:GoFetch matthewgarvin$ docker run -d -p 8080:8080 points
-```
+1. Build the points server image:
+```docker build -t points .```
 
-comment
-```
-MacBook-Air:testData matthewgarvin$ curl http://localhost:8080/points/_status
-{
-    "status": "healthy"
-}
-```
+2. Run the image you just built as a container:
+```docker run -d -p 8080:8080 points```
+
+3. Ping the points server:
+```curl http://localhost:8080/points/_status```
 
 ### (rf) Example Flow
 
@@ -83,7 +87,7 @@ MacBook-Air:testData matthewgarvin$ curl http://localhost:8080/points/payerBalan
 }
 ```
 
-#### (rf) Server Logs From Example Flow
+#### (chk) Server Logs From Example Flow
 
 Here are the server logs corresponding to the above example:
 
