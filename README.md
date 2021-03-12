@@ -24,7 +24,7 @@ only interested in querying a subset of payers
 
 ## (chk) Running The Server
 
-The points server can be run locally in a Docker container.
+The points server can be run locally in a [Docker](https://www.docker.com/) container.
 
 ### (chk) Prereq's
 
