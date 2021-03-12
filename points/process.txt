@@ -1,0 +1,71 @@
+-- scratch note indicating how I'm approaching the problem and paths to a solution -- 
+
+first move: define the basic data structures / JSON payloads as Go structs
+
+also first move: write the tests 
+    -> map the verbal expected behavior from the problem description to a set of unit tests 
+    -> implement these unit tests
+    -> clarify / understand expected behavior of the system
+
+--
+
+	// Q. it's definitely the case that a "new tx" could be older than an existing tx in the db
+	// -- in which case you'd need to place this "new old tx" ahead of the existing db record
+	// -- a dumb thing to do would be to sort the DB every time - but that's computationally sinful
+	// A. don't sort the DB, and you don't need to keep it sorted
+	// -- just sort unspent transactions when handling a spend request
+
+--
+
+/*
+	Basic Considerations:
+	0000. standardize variable and type naming
+		-> standard JSON i/o for API , corresponding structs + scheme
+	000. do all the proper HTTP business
+	00. concept of user; userID; many users, ...
+	0. Validating requests, payloads, missing fields, ...
+	1. Defining Useful Types, Interfaces and Methods
+	2. Sensible DB Definition
+	3. Testing
+	4. Comments
+	5. Logging, Error-Handling, Warnings
+	6. Docker
+	7. Dependency Management - use modules, not dep
+*/
+
+----------
+
+/*
+
+1. call to "add transaction" route:
+
+	{ "payer": "DANNON", "points": 1000, "timestamp": "2020-11-02T14:00:00Z" }
+	{ "payer": "UNILEVER", "points": 200, "timestamp": "2020-10-31T11:00:00Z" }
+	{ "payer": "DANNON", "points": -200, "timestamp": "2020-10-31T15:00:00Z" }
+	{ "payer": "MILLER COORS", "points": 10000, "timestamp": "2020-11-01T14:00:00Z" }
+	{ "payer": "DANNON", "points": 300, "timestamp": "2020-10-31T10:00:00Z" }
+
+2.0. call to "spend points" route:
+
+	{ "points": 5000 }
+
+2.1. response from "spend points" call:
+
+	[
+		{ "payer": "DANNON", "points": -100 },
+		{ "payer": "UNILEVER", "points": -200 },
+		{ "payer": "MILLER COORS", "points": -4,700 }
+	]
+
+3.0. call to "points balance" route after the spend call
+3.1. response from "points balance" call:
+
+	{
+		"DANNON": 1000,
+		"UNILEVER": 0,
+		"MILLER COORS": 5300
+	}
+
+*/
+
+------
