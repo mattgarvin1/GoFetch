@@ -2,10 +2,12 @@
 
 ## (chk) Note To Reviewer
 
+Thanks for taking the time to review my work!
+
 [Here](./problemStatement.pdf) is the original problem statement.
 
-If you would like to see a bit of my thought process as I was working, 
-I jotted down some [notes](./thoughtProcess.txt) while working on my solution.
+If you would like to see a bit of what my thought process was, 
+I jotted down some [notes](./thoughtProcess.txt) while I was working.
 
 This application functions at a basic level in that
 you can walk through the example flow provided in the problem statement
@@ -19,8 +21,6 @@ If I were to spend some more time on this application, I would
 fetch the balances corresponding to a list of payers so that
 you don't have to receive all payer balances if you're 
 only interested in querying a subset of payers
-
-Thanks for taking the time to review my work!
 
 ## (todo) Running the Server
 
