@@ -3,10 +3,8 @@
 ## (chk) Note To Reviewer
 
 Thanks for taking the time to review my work!
-
 [Here](./problemStatement.pdf) is the original problem statement.
-
-If you would like to see a bit of what my thought process was, 
+If you would like to see a bit of what my thought process was,
 I jotted down some [notes](./thoughtProcess.txt) while I was working.
 
 This application functions at a basic level in that
