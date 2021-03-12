@@ -1,6 +1,8 @@
 # Fetch Points Server
 
-## (chk) Note To Reviewer
+-> describe API endpoints
+
+## Note To Reviewer
 
 Thanks for taking the time to review my work!
 [Here](./problemStatement.pdf) is the original problem statement.
@@ -20,17 +22,13 @@ fetch the balances corresponding to a list of payers so that
 you don't have to receive all payer balances if you're 
 only interested in querying a subset of payers
 
-## (todo) Running the Server
+## (chk) Running The Server
 
-The application can easily be run and tested locally.
-We run the application as a Docker container.
+The points server can be run locally in a Docker container.
 
-### (todo) Prereq's
+### (chk) Prereq's
 
-- Go
-- Mux
-- Docker
-- .. anything else?
+This server is written in [Go](https://golang.org/) and uses [mux](https://github.com/gorilla/mux).
 
 ### (chk) Run with Docker
 
