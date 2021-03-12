@@ -1,7 +1,5 @@
 # Fetch Points Server
 
--> describe API endpoints
-
 ## Note To Reviewer
 
 Thanks for taking the time to review my work!
